@@ -1,0 +1,22 @@
+{
+  "name": "playwright-visual-regression-test-demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "http-server -p 3000",
+    "playwright:e2e": "playwright test --ui --grep @e2e",
+    "playwright:visual": "playwright test --ui --grep @visual",
+    "playwright:codegen": "concurrently 'npm run dev -N' 'playwright codegen localhost:3000'"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.42.1",
+    "@types/node": "^20.11.30"
+  },
+  "dependencies": {
+    "concurrently": "^8.2.2",
+    "http-server": "^14.1.1"
+  }
+}
