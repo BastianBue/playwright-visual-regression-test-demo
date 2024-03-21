@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "dev": "http-server -p 3000",
-    "test:visual": "playwright test --ui"
+    "test:visual": "playwright test --ui",
+    "test:visual:codegen": "concurrently 'npm run dev -N' 'playwright codegen localhost:3000'"
   },
   "author": "",
   "license": "ISC",
@@ -14,6 +15,7 @@
     "@types/node": "^20.11.30"
   },
   "dependencies": {
+    "concurrently": "^8.2.2",
     "http-server": "^14.1.1"
   }
 }
